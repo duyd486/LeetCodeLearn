@@ -10,10 +10,50 @@ namespace LeetCodeLearn
     {
         static void Main(string[] args)
         {
-            string s = Console.ReadLine();
-            //int x = int.Parse(Console.ReadLine());
-            Console.WriteLine(RomanToInt(s));
+            //string s = Console.ReadLine();
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine(IsSumOfPowerThree(x));
         }
+
+
+        #region LongestCommonPrefix
+
+        public static string LongestCommon(string[] str)
+        {
+            string s = "";
+
+
+
+            return s;
+        }
+
+        #endregion
+
+        #region NumberSumPowerOfThree
+
+        public static bool IsSumOfPowerThree(int n)
+        {
+            for (int i = 14; i >= 0; i--)
+            {
+                int j = i;
+                int pow = 1;
+                while(j > 0)
+                {
+                    pow *= 3;
+                    j--;
+                }
+                if(n > pow){
+                    n -= pow;
+                }
+                else if (n == pow)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        #endregion
 
         #region RomanToInt
         public static int RomanToInt(string s)
